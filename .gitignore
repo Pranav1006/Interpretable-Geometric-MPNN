@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# PyTorch checkpoints (large files — store selectively)
+*.pt
+*.pth
+# Unignore best checkpoints if you want them tracked:
+# !experiments/**/best.pt
+
+# Data (raw and processed datasets are typically too large for git)
+data/raw/
+data/processed/
+
+# Results (generated outputs — tracked selectively)
+results/counterfactuals/
+results/metrics/
+results/failure_modes/
+
+# Logs
+logs/
+
+# Visualizations (commit only paper-ready figures)
+visualizations/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
