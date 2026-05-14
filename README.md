@@ -83,4 +83,4 @@ pip install -r requirements.txt
 
 ## Status
 
-🔬 Active research — pre-publication.
+Active
