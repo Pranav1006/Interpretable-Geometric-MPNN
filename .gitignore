@@ -38,6 +38,10 @@ logs/
 # Visualizations (commit only paper-ready figures)
 visualizations/
 
+# Papers & Journals
+paper/
+journal/
+
 # OS
 .DS_Store
 Thumbs.db
