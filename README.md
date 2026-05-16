@@ -69,11 +69,32 @@ IG-MPNN/
 
 ## Setup
 
+> **No CUDA required.** The setup scripts install CPU-only PyTorch and fetch
+> pre-built wheels for `torch-scatter` / `torch-sparse` from the PyG CDN,
+> avoiding any compilation step.
+
+**Windows:**
+```bat
+git clone https://github.com/mucha/IG-MPNN.git
+cd IG-MPNN
+setup.bat
+```
+
+**macOS / Linux:**
 ```bash
 git clone https://github.com/mucha/IG-MPNN.git
 cd IG-MPNN
-pip install -r requirements.txt
+bash setup.sh
 ```
+
+Verify the install:
+```bat
+setup.bat --check   # Windows
+bash setup.sh --check  # macOS / Linux
+```
+
+> If you later add a GPU, swap `CUDA_TAG=cpu` to `cu126`, `cu128`, or `cu130`
+> in `setup.bat` and re-run.
 
 ## Built With
 

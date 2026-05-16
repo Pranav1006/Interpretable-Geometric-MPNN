@@ -1,15 +1,29 @@
-torch>=2.0.0
-torch-geometric>=2.3.0
-torch-scatter
-torch-sparse
-rdkit>=2023.3.1
-numpy>=1.24.0
-scipy>=1.10.0
-pandas>=2.0.0
-scikit-learn>=1.2.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-pyyaml>=6.0
-tqdm>=4.65.0
-jupyterlab>=4.0.0
-pytest>=7.3.0
+# ── Core ML ──────────────────────────────────────────────────────────────────
+# torch, torch-geometric, torch-scatter, and torch-sparse must be installed
+# together from the correct index URL — see setup.bat / setup.sh.
+# Do NOT pip install these lines directly; they are listed here for reference.
+torch==2.10.0         # CPU-only; installed via --index-url in setup script
+torch-geometric       # installed via --find-links in setup script
+torch-scatter         # pre-built wheel from PyG CDN (avoids build-from-source)
+torch-sparse          # pre-built wheel from PyG CDN (avoids build-from-source)
+
+# ── Chemistry ────────────────────────────────────────────────────────────────
+rdkit
+
+# ── Data / Numerics ──────────────────────────────────────────────────────────
+numpy
+scipy
+pandas
+scikit-learn
+
+# ── Visualisation ────────────────────────────────────────────────────────────
+matplotlib
+seaborn
+
+# ── Config / IO ──────────────────────────────────────────────────────────────
+pyyaml
+tqdm
+
+# ── Development ──────────────────────────────────────────────────────────────
+jupyterlab
+pytest
