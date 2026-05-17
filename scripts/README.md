@@ -7,6 +7,7 @@ Entry-point scripts for running each stage of the pipeline.
 | Script | Status | Description |
 |---|---|---|
 | `preprocess.py` | ✅ done | Download QM9, apply geometry transforms, generate 80/20 split |
+| `clear_qm9_cache.py` | ✅ done | Delete raw/processed QM9 files to force a clean re-download |
 | `train.py` | planned | Train the Geometric MPNN |
 | `evaluate.py` | planned | Run the evaluation framework on a trained model |
 | `generate_counterfactuals.py` | planned | Run counterfactual generation on a test set |

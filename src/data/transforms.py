@@ -52,16 +52,19 @@ class GeometryTransform(BaseTransform):
         self.use_angles = use_angles
         self.use_torsions = use_torsions
 
-    # ------------------------------------------------------------------
-    def __call__(self, data: Data) -> Data:
+    def forward(self, data: Data) -> Data:
+        """
+        PyG's BaseTransform requires ``forward`` to be implemented.
+        ``__call__`` on BaseTransform delegates here automatically.
+        """
         if data.pos is None:
             raise ValueError(
                 "GeometryTransform requires 3D coordinates (data.pos). "
                 "Ensure the dataset provides conformer positions."
             )
 
-        pos = data.pos            # (N, 3)
-        edge_index = data.edge_index  # (2, E)
+        pos = data.pos
+        edge_index = data.edge_index
 
         # ── Bond lengths ─────────────────────────────────────────────
         dist = compute_distances(pos, edge_index)   # (E, 1)
