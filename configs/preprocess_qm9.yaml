@@ -1,0 +1,31 @@
+# configs/preprocess_qm9.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+# Configuration for the QM9 data pipeline.
+# Run via:  python scripts/preprocess.py --config configs/preprocess_qm9.yaml
+
+experiment_name: preprocess_qm9
+
+data:
+  dataset: qm9
+  root_dir: data/              # project-level data root
+  raw_dir: data/raw/           # QM9 SDF download lands here
+  processed_dir: data/processed/ # PyG processed cache
+  splits_dir: data/splits/     # train/test index JSON files
+
+  # Target property to expose as data.y (used by downstream training configs)
+  # 0 = dipole moment (μ, Debye) — good first target; well-behaved range
+  target_idx: 0
+
+  # Geometric feature toggles
+  use_angles: true
+  use_torsions: true
+
+splitting:
+  train_ratio: 0.80    # 80 % train, 20 % test
+  seed: 42             # fixed seed for reproducibility
+  force: false         # set true to recompute split even if file exists
+
+dataloader:
+  batch_size: 32
+  num_workers: 0       # 0 = main process only (Windows-safe)
+  shuffle_train: true

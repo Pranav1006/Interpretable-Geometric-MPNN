@@ -4,13 +4,13 @@ Entry-point scripts for running each stage of the pipeline.
 
 ## Scripts
 
-| Script | Description |
-|---|---|
-| `train.py` | Train the Geometric MPNN |
-| `evaluate.py` | Run the evaluation framework on a trained model |
-| `generate_counterfactuals.py` | Run counterfactual generation on a test set |
-| `explain.py` | Run the explanation module and save attribution maps |
-| `preprocess.py` | Download and featurize raw datasets |
+| Script | Status | Description |
+|---|---|---|
+| `preprocess.py` | ✅ done | Download QM9, apply geometry transforms, generate 80/20 split |
+| `train.py` | planned | Train the Geometric MPNN |
+| `evaluate.py` | planned | Run the evaluation framework on a trained model |
+| `generate_counterfactuals.py` | planned | Run counterfactual generation on a test set |
+| `explain.py` | planned | Run the explanation module and save attribution maps |
 
 ## Usage
 
